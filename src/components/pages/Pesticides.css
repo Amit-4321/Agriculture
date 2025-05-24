@@ -1,0 +1,173 @@
+/* ✅ Pesticides Page Styling */
+.pesticides-container {
+  text-align: center;
+  padding: 40px 20px;
+  background: #e8f5e9; /* Light Green for Agriculture Theme */
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: #2c3e50;
+  text-transform: uppercase;
+}
+
+/* ✅ Product Card */
+.pesticide-card {
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  width: 100%;
+  max-width: 300px;  /* ✅ Farming Tools Style */
+  margin: auto;
+  height: 430px;
+}
+
+.pesticide-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+.card p{
+  font-weight: bold;
+ 
+}
+/* ✅ Image Container */
+.image-container {
+  width: 100%;
+    height: 220px;  /* ✅ Fixed height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: white; /* ✅ White background for contrast */
+    border-radius: 10px; /* ✅ Smooth rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* ✅ Light shadow for better look */
+    transition: transform 0.3s ease-in-out; 
+}
+
+.product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;  /* ✅ Image full fit hogi */
+  object-position: center;
+  padding: 15px;
+  margin: 20px;
+  transition: transform 0.3s ease-in-out; 
+  
+}
+/* ✅ Product Details */
+.product-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.product-price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #27ae60;
+  margin-bottom: 8px;
+}
+
+/* ✅ Buy Now Button */
+.buy-now-btn {
+  width: 100%;
+  background: linear-gradient(90deg, #27ae60, #2ecc71);
+  border: none;
+  padding: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 6px;
+  transition: background 0.3s ease, transform 0.2s ease;
+  color: white;
+}
+
+.buy-now-btn:hover {
+  background: linear-gradient(90deg, #2ecc71, #27ae60);
+  transform: scale(1.05);
+}
+
+/* ✅ Modal Styling */
+.modal-content {
+  text-align: center;
+  padding: 20px;
+}
+
+.modal-image {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  margin: 0 auto 15px auto;
+  display: block;
+}
+
+.modal-price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #27ae60;
+  margin-bottom: 10px;
+}
+
+/* ✅ Modal Buttons */
+.modal-btn {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  font-size: 1rem;
+  padding: 10px;
+  border-radius: 6px;
+  font-weight: bold;
+  color: white;
+}
+
+.modal-btn:nth-child(1) {
+  background: #27ae60;
+}
+
+.modal-btn:nth-child(2) {
+  background: #f39c12;
+}
+
+.modal-btn:nth-child(3) {
+  background: #3498db;
+}
+/* ✅ Payment Success Animation */
+.success-animation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.checkmark {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #4CAF50;
+  color: white;
+  font-size: 40px;
+  animation: pop 0.5s ease forwards;
+}
+
+/* Animation for Pop Effect */
+@keyframes pop {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  80% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}

@@ -1,0 +1,33 @@
+.brand-page-container {
+    padding: 2rem;
+    background: #f9f9f9;
+    border-radius: 10px;
+    max-width: 800px;
+    margin: auto;
+    box-shadow: 0 0 12px rgba(0, 128, 0, 0.2);
+    text-align: center;
+  }
+  
+  .brand-logo {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+  }
+  
+  .explore-btn {
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+  
+  .explore-btn:hover {
+    background-color: #388e3c;
+    transform: scale(1.05);
+  }
+  

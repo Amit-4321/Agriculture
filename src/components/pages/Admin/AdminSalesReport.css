@@ -1,0 +1,27 @@
+.admin-sales-container {
+    background: #f9fafb;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 80px;
+  }
+  
+  .admin-sales-title {
+    font-weight: 700;
+    color: #1f2937;
+  }
+  
+  .admin-sales-table {
+    background: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .admin-sales-th {
+    background-color: #343a40;
+    color: #ffffff;
+  }
+  
+  .admin-sales-td {
+    vertical-align: middle;
+  }
+  

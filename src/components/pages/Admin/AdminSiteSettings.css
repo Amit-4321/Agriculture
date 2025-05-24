@@ -1,0 +1,31 @@
+.admin-settings-container {
+    background: #f9fafb;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 80px;
+  }
+  
+  .admin-settings-title {
+    font-weight: 700;
+    color: #1f2937;
+  }
+  
+  .admin-settings-form {
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .admin-settings-label {
+    font-weight: 600;
+    color: #374151;
+  }
+  
+  .admin-settings-input {
+    border: 1px solid #d1d5db;
+  }
+  
+  .admin-settings-save-btn {
+    width: 100%;
+  }
+  

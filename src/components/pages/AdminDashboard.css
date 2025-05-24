@@ -1,0 +1,109 @@
+.admin-dashboard {
+    display: flex;
+    min-height: 100vh;
+  }
+  
+  .admin-sidebar {
+    width: 220px;
+    background-color: #1a1a2e;
+    color: #2a7d2e;
+    padding-top: 20px;
+  }
+  
+  .admin-main-content {
+    flex-grow: 1;
+    background-color: #f5f5f5;
+    padding: 20px;
+    color: black;
+  }
+/* General Dark Mode Styles */
+body.dark-mode {
+  background-color: #1c1c2b;
+  color: #f1f1f1;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* body.dark-mode a {
+  color: #00bcd4;
+}
+
+body.dark-mode a:hover {
+  color: #00acc1;
+  text-decoration: underline;
+} */
+
+body.dark-mode .admin-navbar {
+  background-color: #2b2b3c !important;
+  color: white;
+  border-bottom: 1px solid #444;
+}
+
+body.dark-mode .admin-navbar button {
+  border-color: #555 !important;
+  color: white !important;
+  background-color: #333;
+}
+
+body.dark-mode .admin-sidebar {
+  background-color: #252537 !important;
+  border-right: 1px solid #444;
+}
+
+body.dark-mode .admin-sidebar a {
+  color: #ccc !important;
+}
+
+body.dark-mode .admin-sidebar a:hover {
+  background-color: #333;
+  color: #00bcd4 !important;
+}
+
+body.dark-mode .card,
+body.dark-mode .table,
+body.dark-mode .form-control {
+  background-color: #2e2e42 !important;
+  color: #f1f1f1;
+  border-color: #444;
+}
+
+body.dark-mode .form-control::placeholder {
+  color: #999;
+}
+
+body.dark-mode .btn {
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+body.dark-mode .btn-primary {
+  background-color: #1976d2;
+  border-color: #1565c0;
+}
+
+body.dark-mode .btn-outline-secondary {
+  color: #ccc;
+  border-color: #555;
+}
+
+body.dark-mode .btn-outline-secondary:hover {
+  background-color: #444;
+  border-color: #666;
+}
+
+body.dark-mode .table th,
+body.dark-mode .table td {
+  border-color: #444;
+}
+
+/* Optional: Custom Scrollbar */
+body.dark-mode ::-webkit-scrollbar {
+  width: 8px;
+}
+
+body.dark-mode ::-webkit-scrollbar-track {
+  background: #2b2b3c;
+}
+
+body.dark-mode ::-webkit-scrollbar-thumb {
+  background-color: #444;
+  border-radius: 4px;
+}
