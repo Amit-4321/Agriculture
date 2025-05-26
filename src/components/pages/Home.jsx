@@ -4,10 +4,10 @@ import { Link } from "react-router-dom";
 import "./Home.css";
 import Agriculturists from "./Agriculturists";
 import Footer from "./Footer";
-import { useTranslation } from "react-i18next"; // ✅ Step 1
+import { useTranslation } from "react-i18next"; 
 
 function Home() {
-  const { t } = useTranslation(); // ✅ Step 2
+  const { t } = useTranslation(); 
 
   return (
     <>
@@ -17,7 +17,7 @@ function Home() {
             <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="0" className="active" aria-label="Slide 1"></button>
             <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
             <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+            {/* <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button> */}
             <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
           </div>
 
@@ -37,7 +37,7 @@ function Home() {
 
   <div className="carousel-item">
     <a href="/farmingToolsPage">
-      <img src="/toolsbaner.png" className="d-block mx-auto custom-carousel-img" alt="Slide 3" />
+      <img src="/tools baner.png" className="d-block mx-auto custom-carousel-img" alt="Slide 3" />
     </a>
   </div>
 
