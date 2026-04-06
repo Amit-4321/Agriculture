@@ -50,14 +50,14 @@ function Navbar() {
           <span className="logo">AgriStore</span>
         </Link>
 
-        <div className="search-container">
+        {/* <div className="search-container">
           <input
             type="text"
             placeholder="Search for products..."
             className="search-input"
           />
           <i className="fa fa-search search-icon"></i>
-        </div>
+        </div> */}
 </div>
         <ul className="nav-links-desktop">
           <li>
@@ -106,11 +106,11 @@ function Navbar() {
           </Link>
 
           <LoginButton />
-          <div className="d-flex align-items-center">
+          <div className="d-flex align-items-center ">
             <select
               onChange={handleLanguageChange}
               value={i18n.language}
-              className="form-select language-select"
+              className="form-select language-select "
             >
               <option value="en">English</option>
               <option value="hi">हिन्दी</option>

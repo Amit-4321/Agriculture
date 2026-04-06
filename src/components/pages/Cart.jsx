@@ -2,10 +2,13 @@ import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 import { useCart } from "./CartContext";
 import { Link } from "react-router-dom";
+import { useTranslation } from 'react-i18next';
+import BuyNowModal from "./BuyNowModal";
 import "./Cart.css";
 
 const Cart = () => {
-  const { cart, savedItems, dispatch} = useCart();
+  const { t } = useTranslation();
+  const { cart, savedItems, dispatch } = useCart();
   const [showAddressModal, setShowAddressModal] = useState(false);
   const [showPaymentModal, setShowPaymentModal] = useState(false);
   const [showCardDetails, setShowCardDetails] = useState(false);
@@ -29,11 +32,10 @@ const Cart = () => {
   const [upiId, setUpiId] = useState("");
 
   const handleRemove = (id) => {
-    if (window.confirm("Are you sure you want to remove this item?")) {
+    if (window.confirm(t('cart.confirmRemove'))) {
       dispatch({ type: "REMOVE_FROM_CART", payload: { id } });
     }
   };
-
 
   const handleRemoveFromSaved = (id) => {
     dispatch({ type: "REMOVE_FROM_SAVED", payload: { id } });
@@ -59,11 +61,9 @@ const Cart = () => {
 
   const handlePlaceOrder = () => {
     if(cart.length === 0) {
-
-      alert("Please fill all fields"); 
+      alert(t('validation.emptyCart')); 
       return;
     }
-    
     setShowAddressModal(true);
   };
 
@@ -75,15 +75,15 @@ const Cart = () => {
   const validateAddress = () => {
     const { fullAddress, landmark, pincode, mobile } = address;
     if (!fullAddress.trim() || !landmark.trim() || !pincode.trim() || !mobile.trim()) {
-      alert("Please fill all address fields");
+      alert(t('validation.addressFields'));
       return false;
     }
     if (!/^\d{10}$/.test(mobile)) {
-      alert("Please enter valid 10-digit mobile number");
+      alert(t('validation.mobile'));
       return false;
     }
     if (!/^\d{6}$/.test(pincode)) {
-      alert("Please enter valid 6-digit pincode");
+      alert(t('validation.pincode'));
       return false;
     }
     return true;
@@ -105,15 +105,15 @@ const Cart = () => {
   const validateCardDetails = () => {
     if (!cardDetails.number.trim() || !cardDetails.name.trim() || 
         !cardDetails.expiry.trim() || !cardDetails.cvv.trim()) {
-      alert("Please fill all card details");
+      alert(t('validation.cardDetails'));
       return false;
     }
     if (!/^\d{16}$/.test(cardDetails.number)) {
-      alert("Please enter valid 16-digit card number");
+      alert(t('validation.cardNumber'));
       return false;
     }
     if (!/^\d{3,4}$/.test(cardDetails.cvv)) {
-      alert("Please enter valid CVV");
+      alert(t('validation.cvv'));
       return false;
     }
     return true;
@@ -121,11 +121,11 @@ const Cart = () => {
 
   const validateUPIDetails = () => {
     if (!upiId.trim()) {
-      alert("Please enter UPI ID");
+      alert(t('validation.upiId'));
       return false;
     }
     if (!/^[\w.-]+@[\w]+$/.test(upiId)) {
-      alert("Please enter valid UPI ID (e.g. name@upi)");
+      alert(t('validation.validUpi'));
       return false;
     }
     return true;
@@ -160,13 +160,12 @@ const Cart = () => {
     setPaymentMethod("");
   };
 
-
   return (
     <div className="shopping-cart-container">
       <div className="shopping-left-section">
-        <h2 className="shopping-cart-heading">🛒 Your Cart ({cart.length})</h2>
+        <h2 className="shopping-cart-heading">{t('cart.title')} ({cart.length})</h2>
         {cart.length === 0 ? (
-          <p className="shopping-empty-message">Your cart is empty.</p>
+          <p className="shopping-empty-message">{t('cart.emptyMessage')}</p>
         ) : (
           cart.map((item) => (
             <div className="shopping-cart-item" key={item.id}>
@@ -182,10 +181,10 @@ const Cart = () => {
                 </div>
                 <div className="shopping-item-buttons">
                   <Button variant="secondary" size="sm" onClick={() => handleSaveForLater(item)}>
-                    Save for Later
+                    {t('cart.saveForLater')}
                   </Button>
                   <Button variant="danger" size="sm" onClick={() => handleRemove(item.id)}>
-                    Remove
+                    {t('cart.remove')}
                   </Button>
                 </div>
               </div>
@@ -195,7 +194,7 @@ const Cart = () => {
 
         {savedItems.length > 0 && (
           <div className="shopping-saved-section">
-            <h4>Saved For Later ({savedItems.length})</h4>
+          <h4>{t('cart.savedForLater')} ({savedItems.length})</h4>
             {savedItems.map((item) => (
               <div className="shopping-cart-item" key={item.id}>
                 <img src={item.image} alt={item.name} className="shopping-item-img" />
@@ -205,14 +204,14 @@ const Cart = () => {
                   <p>₹{item.price}</p>
                   <div className="shopping-item-buttons">
                     <Button variant="primary" size="sm" onClick={() => handleMoveToCart(item)}>
-                      Move to Cart
+                      {t('cart.moveToCart')}
                     </Button>
                     <Button variant="danger" size="sm" onClick={() => {
-                      if(window.confirm("Are you sure you want to remove this item?")) {
+                      if(window.confirm(t('cart.confirmRemove'))) {
                         handleRemoveFromSaved(item.id);
                       }
                     }}>
-                      Remove
+                      {t('cart.remove')}
                     </Button>
                   </div>
                 </div>
@@ -223,104 +222,128 @@ const Cart = () => {
       </div>
 
       <div className="shopping-right-section">
-        <Link to="/order-history" className="order-history-link">View Order History</Link>
+  <Link to="/order-history" className="order-history-link">
+    {t('cart.viewOrderHistory')}
+  </Link>
 
-        <div className="shopping-price-box">
-          <h5 className="shopping-price-heading">PRICE DETAILS</h5>
-          <hr className="shopping-divider" />
-          <p className="shopping-price-item">
-            <span>Price ({cart.length} items)</span>
-            <span>₹{getTotalPrice()}</span>
-          </p>
-          <p className="shopping-price-item">
-            <span>Discount</span>
-            <span>- ₹{cart.length * 50}</span>
-          </p>
-          <p className="shopping-price-item">
-            <span>Platform Fee</span>
-            <span>₹3</span>
-          </p>
-          <p className="shopping-price-item">
-            <span>Delivery Charges</span>
-            <span><s>₹40</s> Free</span>
-          </p>
-          <hr className="shopping-divider" />
-          <h6 className="shopping-total-amount">
-            <span>Total Amount</span>
-            <span>₹{totalAmount}</span>
-          </h6>
-          <p className="shopping-save-msg">
-            You will save ₹{cart.length * 50} on this order
-          </p>
-          <Button 
-            variant="success" 
-            className="shopping-place-order-btn w-100"
-            onClick={handlePlaceOrder}
-            disabled={cart.length === 0}
-          >
-            Place Order
-          </Button>
-        </div>
-      </div>
+  <div className="shopping-price-box">
+    <h5 className="shopping-price-heading">{t('cart.priceDetails')}</h5>
+    <hr className="shopping-divider" />
+
+    <p className="shopping-price-item">
+      <span>{t('cart.price', { count: cart.length })}</span>
+      <span>₹{getTotalPrice()}</span>
+    </p>
+
+    <p className="shopping-price-item">
+      <span>{t('cart.discount')}</span>
+      <span>- ₹{cart.length * 50}</span>
+    </p>
+
+    {cart.length > 0 ? (
+      <p className="shopping-price-item">
+        <span>{t('cart.platformFee')}</span>
+        <span>₹3</span>
+      </p>
+    ) : (
+      <p className="shopping-price-item">
+        <span>{t('cart.platformFee')}</span>
+        <span>₹0</span>
+      </p>
+    )}
+
+    <p className="shopping-price-item">
+      <span>{t('cart.deliveryCharges')}</span>
+      <span>
+        <s>₹40</s> {t('cart.free')}
+      </span>
+    </p>
+
+    <hr className="shopping-divider" />
+
+    <h6 className="shopping-total-amount">
+      <span>{t('cart.totalAmount')}</span>
+      <span>
+        ₹
+        {getTotalPrice() -
+          cart.length * 50 +
+          (cart.length > 0 ? 3 : 0)}
+      </span>
+    </h6>
+
+    <p className="shopping-save-msg">
+      {t('cart.saveMessage', { amount: cart.length * 50 })}
+    </p>
+
+    <Button
+      variant="success"
+      className="shopping-place-order-btn w-100"
+      onClick={handlePlaceOrder}
+      disabled={cart.length === 0}
+    >
+      {t('cart.placeOrder')}
+    </Button>
+  </div>
+</div>
 
       {/* Address Modal */}
       {showAddressModal && (
         <div className="modal-overlay">
           <div className="modal-box">
             <div className="modal-header">
-              <h3>Delivery Address</h3>
+              <h3>{t('address.title')}</h3>
               <span className="close-btn" onClick={closeAllModals}>&times;</span>
             </div>
             <div className="modal-body">
               <div className="form-group">
-                <label>Full Address*</label>
+                <label>{t('address.fullAddress')}</label>
                 <textarea
                   className="form-control"
                   name="fullAddress"
                   value={address.fullAddress}
                   onChange={handleAddressChange}
-                  placeholder="House no, Building, Street, Area"
+                  placeholder={t('address.fullAddressPlaceholder')}
                   required
                 />
               </div>
               
               <div className="form-group">
-                <label>Landmark*</label>
+                <label>{t('address.landmark')}</label>
                 <input
                   type="text"
                   className="form-control"
                   name="landmark"
                   value={address.landmark}
                   onChange={handleAddressChange}
-                  placeholder="Nearby famous place"
+                  placeholder={t('address.landmarkPlaceholder')}
                   required
                 />
               </div>
               
               <div className="form-row">
                 <div className="form-group">
-                  <label>Pincode*</label>
+                  <label>{t('address.pincode')}</label>
                   <input
                     type="text"
                     className="form-control"
                     name="pincode"
                     value={address.pincode}
                     onChange={handleAddressChange}
-                    placeholder="6-digit pincode"
+                    placeholder={t('address.pincodePlaceholder')}
                     maxLength="6"
                     required
                   />
                 </div>
                 
                 <div className="form-group">
-                  <label>Mobile Number*</label>
+                  <label>{t('address.mobile')}</label>
                   <input
                     type="tel"
                     className="form-control"
                     name="mobile"
                     value={address.mobile}
                     onChange={handleAddressChange}
-                    placeholder="10-digit mobile number"
+                    placeholder={t('address.mobilePlaceholder')}
                     maxLength="10"
                     required
                   />
@@ -328,27 +351,29 @@ const Cart = () => {
               </div>
               
               <div className="order-summary">
-                <h4>Order Summary</h4>
-                <p>{cart.length} Item{cart.length !== 1 ? 's' : ''}</p>
-                <p className="price">Total: ₹{totalAmount}</p>
+                <h4>{t('address.orderSummary')}</h4>
+                <p>{cart.length} {t('address.items')}</p>
+                <p className="price">{t('address.total')}: ₹{totalAmount}</p>
               </div>
             </div>
             <div className="modal-footer">
-              <button className="cancel-btn" onClick={closeAllModals}>Cancel</button>
+              <button className="cancel-btn" onClick={closeAllModals}>{t('address.cancel')}</button>
               <button className="confirm-btn" onClick={handleProceedToPayment}>
-                Proceed to Payment
+                {t('address.proceedToPayment')}
               </button>
             </div>
           </div>
         </div>
       )}
 
+
       {/* Payment Options Modal */}
+     
       {showPaymentModal && (
         <div className="modal-overlay">
           <div className="modal-box">
             <div className="modal-header">
-              <h3>Select Payment Method</h3>
+              <h3>{t('payment.title')}</h3>
               <span className="close-btn" onClick={closeAllModals}>&times;</span>
             </div>
             <div className="modal-body">
@@ -360,8 +385,8 @@ const Cart = () => {
                 >
                   <div className="payment-icon">💳</div>
                   <div className="payment-details">
-                    <h4>Credit/Debit Card</h4>
-                    <p>Pay using Visa, Mastercard, etc.</p>
+                    <h4>{t('payment.card')}</h4>
+                    <p>{t('payment.cardDesc')}</p>
                   </div>
                 </div>
                 
@@ -372,8 +397,8 @@ const Cart = () => {
                 >
                   <div className="payment-icon">📱</div>
                   <div className="payment-details">
-                    <h4>UPI Payment</h4>
-                    <p>Pay using any UPI app</p>
+                    <h4>{t('payment.upi')}</h4>
+                    <p>{t('payment.upiDesc')}</p>
                   </div>
                 </div>
                 
@@ -384,8 +409,8 @@ const Cart = () => {
                 >
                   <div className="payment-icon">💰</div>
                   <div className="payment-details">
-                    <h4>Cash on Delivery</h4>
-                    <p>Pay when you receive your order</p>
+                    <h4>{t('payment.cod')}</h4>
+                    <p>{t('payment.codDesc')}</p>
                   </div>
                 </div>
               </div>
@@ -393,13 +418,13 @@ const Cart = () => {
               {/* Card Details Form */}
               {showCardDetails && (
                 <div className="payment-form">
-                  <h4>Card Details</h4>
+                  <h4>{t('payment.cardDetails')}</h4>
                   <div className="form-group">
-                    <label>Card Number*</label>
+                    <label>{t('payment.cardNumber')}</label>
                     <input
                       type="text"
                       className="form-control"
-                      placeholder="16-digit card number"
+                      placeholder={t('payment.cardNumberPlaceholder')}
                       value={cardDetails.number}
                       onChange={(e) => setCardDetails({...cardDetails, number: e.target.value})}
                       maxLength="16"
@@ -407,11 +432,11 @@ const Cart = () => {
                   </div>
                   
                   <div className="form-group">
-                    <label>Name on Card*</label>
+                    <label>{t('payment.cardName')}</label>
                     <input
                       type="text"
                       className="form-control"
-                      placeholder="As printed on card"
+                      placeholder={t('payment.cardNamePlaceholder')}
                       value={cardDetails.name}
                       onChange={(e) => setCardDetails({...cardDetails, name: e.target.value})}
                     />
@@ -419,22 +444,22 @@ const Cart = () => {
                   
                   <div className="form-row">
                     <div className="form-group">
-                      <label>Expiry Date*</label>
+                      <label>{t('payment.expiry')}</label>
                       <input
                         type="text"
                         className="form-control"
-                        placeholder="MM/YY"
+                        placeholder={t('payment.expiryPlaceholder')}
                         value={cardDetails.expiry}
                         onChange={(e) => setCardDetails({...cardDetails, expiry: e.target.value})}
                       />
                     </div>
                     
                     <div className="form-group">
-                      <label>CVV*</label>
+                      <label>{t('payment.cvv')}</label>
                       <input
                         type="text"
                         className="form-control"
-                        placeholder="3 or 4 digits"
+                        placeholder={t('payment.cvvPlaceholder')}
                         value={cardDetails.cvv}
                         onChange={(e) => setCardDetails({...cardDetails, cvv: e.target.value})}
                         maxLength="4"
@@ -447,27 +472,27 @@ const Cart = () => {
               {/* UPI Details Form */}
               {showUPIDetails && (
                 <div className="payment-form">
-                  <h4>UPI Details</h4>
+                  <h4>{t('payment.upiId')}</h4>
                   <div className="form-group">
-                    <label>UPI ID*</label>
+                    <label>{t('payment.upiId')}</label>
                     <input
                       type="text"
                       className="form-control"
-                      placeholder="yourname@upi"
+                      placeholder={t('payment.upiIdPlaceholder')}
                       value={upiId}
                       onChange={(e) => setUpiId(e.target.value)}
                     />
-                    <small className="text-muted">e.g. 9876543210@ybl or name@oksbi</small>
+                    <small className="text-muted">{t('payment.upiExample')}</small>
                   </div>
                 </div>
               )}
 
               {/* Address Review Section */}
               <div className="address-review">
-                <h4>Delivery To:</h4>
+                <h4>{t('payment.deliveryTo')}</h4>
                 <p>{address.fullAddress}</p>
                 <p>{address.landmark}, {address.pincode}</p>
-                <p>Mobile: {address.mobile}</p>
+                <p>{t('payment.mobile')}: {address.mobile}</p>
               </div>
             </div>
             <div className="modal-footer">
@@ -479,7 +504,7 @@ const Cart = () => {
                   setPaymentMethod("");
                 }}
               >
-                Back
+                {t('payment.back')}
               </button>
               
               <button 
@@ -491,7 +516,7 @@ const Cart = () => {
                   (paymentMethod === 'upi' && !upiId)
                 }
               >
-                {paymentMethod === 'cod' ? 'Place Order' : `Pay ₹${totalAmount}`}
+                {paymentMethod === 'cod' ? t('payment.placeOrder') : `${t('payment.pay')} ₹${totalAmount}`}
               </button>
             </div>
           </div>
@@ -504,28 +529,28 @@ const Cart = () => {
           <div className="modal-box success-modal">
             <div className="modal-body">
               <div className="success-icon">✅</div>
-              <h3>Order Placed Successfully!</h3>
-              <p>Thank you for shopping with us</p>
+              <h3>{t('success.title')}</h3>
+              <p>{t('success.thankYou')}</p>
               
               <div className="order-details">
-                <h4>Order Details</h4>
-                <p><strong>Payment Method:</strong> {
-                  paymentMethod === 'card' ? 'Credit/Debit Card' : 
-                  paymentMethod === 'upi' ? 'UPI Payment' : 'Cash on Delivery'
+                <h4>{t('success.orderDetails')}</h4>
+                <p><strong>{t('success.paymentMethod')}:</strong> {
+                  paymentMethod === 'card' ? t('payment.card') : 
+                  paymentMethod === 'upi' ? t('payment.upi') : t('payment.cod')
                 }</p>
                 
-                <p><strong>Amount Paid:</strong> ₹{totalAmount}</p>
+                <p><strong>{t('success.amountPaid')}:</strong> ₹{totalAmount}</p>
                 
                 <div className="delivery-info">
-                  <p><strong>Delivery Address:</strong></p>
+                  <p><strong>{t('success.deliveryAddress')}:</strong></p>
                   <p>{address.fullAddress}</p>
                   <p>{address.landmark}, {address.pincode}</p>
-                  <p>Mobile: {address.mobile}</p>
+                  <p>{t('payment.mobile')}: {address.mobile}</p>
                 </div>
               </div>
               
               <button className="continue-btn" onClick={closeAllModals}>
-                Continue Shopping
+                {t('success.continueShopping')}
               </button>
             </div>
           </div>

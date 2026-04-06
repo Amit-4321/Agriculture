@@ -1,43 +1,14 @@
 import React, { useState } from 'react';
 import BuyNowModal from './BuyNowModal';
 import './BrandProducts.css';
-
-const products = [
-  {
-    name: "Mahyco Hybrid Tomato Seeds",
-    image: "./Brands/tomato-seeds.jpeg",
-    price: "₹250",
-  },
-  {
-    name: "Mahyco Hybrid Okra Seeds",
-    image: "./Brands/okra-seeds.jpeg",
-    price: "₹180",
-  },
-  {
-    name: "Mahyco Bt Cotton Seeds",
-    image: "./Brands/cotton-seeds.jpeg",
-    price: "₹400",
-  },
-  {
-    name: "Mahyco Hybrid Chili Seeds",
-    image: "./Brands/chilly-seeds.jpeg",
-    price: "₹220",
-  },
-  {
-    name: "Mahyco Corn Hybrid Seeds",
-    image: "./Brands/corn-seeds.jpeg",
-    price: "₹300",
-  },
-  {
-    name: "Mahyco Spinach Seeds",
-    image: "./Brands/palakh-seeds.jpeg",
-    price: "₹300",
-  },
-];
+import { useTranslation } from 'react-i18next';
 
 const Brand1Products = () => {
+  const { t } = useTranslation();
   const [showModal, setShowModal] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState({});
+
+  const products = t('brandproduct1.products', { returnObjects: true });
 
   const handleBuyNow = (product) => {
     setSelectedProduct(product);
@@ -46,7 +17,7 @@ const Brand1Products = () => {
 
   return (
     <div className="product-page">
-      <h2 className="product-title">Mahyco Products</h2>
+      <h2 className="product-title">{t('brandproduct1.pageTitle')}</h2>
       <div className="product-grid">
         {products.map((item, index) => (
           <div 
@@ -59,7 +30,7 @@ const Brand1Products = () => {
               <h3 className="product-name">{item.name}</h3>
               <p className="price">{item.price}</p>
               <button className="buy-btn" onClick={(e) => { e.stopPropagation(); handleBuyNow(item); }}>
-                Buy Now
+                {t('brandproduct1.buyNow')}
               </button>
             </div>
           </div>

@@ -1,42 +1,18 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import './Discounts.css';
 import BuyNowModal from './BuyNowModal';
 
-const discountItems = [
-  {
-    id: 1,
-    name: "Organic Fertilizer",
-    image: "/Brands/chilly-seeds.jpeg",
-    originalPrice: 500,
-    discountedPrice: 350,
-    discount: "30% OFF",
-  },
-  {
-    id: 2,
-    name: "Hybrid Seeds",
-    image: "/Brands/tomato-seeds.jpeg",
-    originalPrice: 300,
-    discountedPrice: 225,
-    discount: "25% OFF",
-  },
-  {
-    id: 3,
-    name: "Pesticide Spray",
-    image: "/Brands/okra-seeds.jpeg",
-    originalPrice: 200,
-    discountedPrice: 150,
-    discount: "25% OFF",
-  },
-  
-];
-
 const Discounts = () => {
+  const { t } = useTranslation();
+  const discountItems = t('discounts.items', { returnObjects: true });
+
   const [showModal, setShowModal] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
 
   return (
     <div className="discounts-page">
-      <h2 className="discounts-title">🔥 Special Offers & Discounts 🔥</h2>
+      <h2 className="discounts-title">{t('discounts.title')}</h2>
 
       <div className="discounts-grid">
         {discountItems.map((item) => (
@@ -53,7 +29,7 @@ const Discounts = () => {
                 setShowModal(true);
               }}
             >
-              Buy Now
+              {t('discounts.buyNow')}
             </button>
           </div>
         ))}

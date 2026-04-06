@@ -1,51 +1,53 @@
 import React, { useState, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import './SeasonWise.css';
 
-const crops = {
-  kharif: {
-    title: "Kharif Crops",
-    images: [
-      "/rice.jpeg",      // First image for Kharif
-      "/millet.jpeg",     // Second image for Kharif
-      "/cotton.jpeg"     // Third image for Kharif
-    ],
-    description: [
-      "Sown at the beginning of the monsoon.",
-      "Harvested at the end of the monsoon.",
-      "Major crops: Rice, Jowar, Bajra, Cotton."
-    ]
-  },
-  rabi: {
-    title: "Rabi Crops",
-    images: [
-      "/wheat.jpeg",     // First image for Rabi
-      "/Peas.jpeg",    // Second image for Rabi
-      "/sarso.jpeg"    // Third image for Rabi
-    ],
-    description: [
-      "Sown in winter (October-November).",
-      "Harvested in spring (March-April).",
-      "Major crops: Wheat, Barley, Mustard."
-    ]
-  },
-  zaid: {
-    title: "Zaid Crops",
-    images: [
-      "/Bitter Gourd.jpeg",  // First image for Zaid
-      "/Cucumber.jpeg",    // Second image for Zaid
-      "/Watermelon.jpeg"    // Third image for Zaid
-    ],
-    description: [
-      "Grown between Rabi and Kharif seasons.",
-      "Short-duration summer crops (March-June).",
-      "Major crops: Watermelon, Cucumber, Muskmelon."
-    ]
-  }
-};
-
 const SeasonWise = () => {
+  const { t } = useTranslation();
   const [selected, setSelected] = useState(null);
   const descRefs = useRef({});
+
+  const crops = {
+    kharif: {
+      title: t("season.kharif.title"),
+      images: [
+        "/rice.jpeg",
+        "/millet.jpeg",
+        "/cotton.jpeg"
+      ],
+      description: [
+        t("season.kharif.desc1"),
+        t("season.kharif.desc2"),
+        t("season.kharif.desc3")
+      ]
+    },
+    rabi: {
+      title: t("season.rabi.title"),
+      images: [
+        "/wheat.jpeg",
+        "/Peas.jpeg",
+        "/sarso.jpeg"
+      ],
+      description: [
+        t("season.rabi.desc1"),
+        t("season.rabi.desc2"),
+        t("season.rabi.desc3")
+      ]
+    },
+    zaid: {
+      title: t("season.zaid.title"),
+      images: [
+        "/Bitter Gourd.jpeg",
+        "/Cucumber.jpeg",
+        "/Watermelon.jpeg"
+      ],
+      description: [
+        t("season.zaid.desc1"),
+        t("season.zaid.desc2"),
+        t("season.zaid.desc3")
+      ]
+    }
+  };
 
   const handleSelect = (season) => {
     setSelected(season);
@@ -59,7 +61,7 @@ const SeasonWise = () => {
 
   return (
     <div className="season-container">
-      <h2 className="season-heading">Crop Seasons in India</h2>
+      <h2 className="season-heading">{t("season.heading")}</h2>
 
       <div className="season-content">
         <div className="season-links">

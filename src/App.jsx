@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {HashRouter as Router, Routes, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
@@ -38,6 +38,12 @@ import MarketPrice from "./components/pages/MarketPrice";
 
 import Agriculturists from "./components/pages/Agriculturists";
 import Blogs from "./components/pages/Blogs";
+import OrganicBlog from "./components/pages/Blogs";
+import IrrigationBlog from "./components/pages/IrrigationBlog";
+import CropProtection from "./components/pages/CropProtection";
+import FarmMachineryBlog from "./components/pages/FarmMachineryBlog";
+import EventsBlog from "./components/pages/EventsBlog";
+
 import Contact from "./components/pages/Contact";
 import Login from "./components/pages/Login";
 import SeasonWise from "./components/pages/SeasonWise";
@@ -104,6 +110,13 @@ function App() {
       
         <Route path="/agriculturists" element={<Agriculturists />} />
         <Route path="/blogs" element={<Blogs />} />
+        <Route path="/organicBlog" element={<OrganicBlog />} />
+        <Route path="/irrigation" element={<IrrigationBlog />} />
+        <Route path="/cropProtection" element={<CropProtection />} />
+        <Route path="/farmMachanery" element={<FarmMachineryBlog />} />
+        <Route path="/eventblog" element={<EventsBlog />} />
+
+
         <Route path="/contact" element={<Contact />} />
         <Route path="/login" element={<Login />} />
         <Route path="/season-wise" element={<SeasonWise />} />  {/* ✅ New Route */}

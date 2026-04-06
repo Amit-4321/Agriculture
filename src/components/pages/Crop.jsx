@@ -9,124 +9,124 @@ const cropCategories = [
     crops: [
       { 
         src: 'rice.jpeg', 
-        name: "Rice", 
+        name: "चावल", 
         description: [
-          "Sowing Months: June-July (Kharif season)",
-          "Harvesting: October-November",
-          "Soil Type: Clay-loam with good water retention (pH 5.5-6.5)",
-          "Water Requirements: 1500-2500 mm total, Continuous flooding (5-10 cm standing water)",
-          "Fertilizers (per acre): N: 80-120 kg, P: 40-60 kg, K: 40-60 kg, Zinc sulfate: 25 kg",
-          "Market Price (2024): ₹1,800-₹2,500 per quintal"
+          "बुवाई का समय: जून-जुलाई (खरीफ सीजन)",
+          "कटाई: अक्टूबर-नवंबर",
+          "मिट्टी: जलधारण क्षमता वाली चिकनी-दोमट (pH 5.5-6.5)",
+          "पानी की आवश्यकता: 1500-2500 मिमी, निरंतर जलभराव (5-10 सेमी)",
+          "उर्वरक (प्रति एकड़): N: 80-120 किग्रा, P: 40-60 किग्रा, K: 40-60 किग्रा, जिंक सल्फेट: 25 किग्रा",
+          "बाजार मूल्य (2024): ₹1,800-₹2,500 प्रति क्विंटल"
         ] 
       },
       { 
         src: 'wheat.jpeg', 
-        name: "Wheat", 
+        name: "गेहूं", 
         description: [
-          "Sowing Months: November (Rabi season)",
-          "Harvesting: March-April",
-          "Soil Type: Well-drained loam (pH 6.0-7.5)",
-          "Water Requirements: 4-6 irrigations (500-700 mm total)",
-          "Fertilizers (per acre): N: 50-60 kg, P: 25-30 kg, K: 20-25 kg",
-          "Market Price: ₹2,100-₹2,600 per quintal"
-        ] 
+          "बुवाई का समय: नवंबर (रबी सीजन)",
+          "कटाई: मार्च-अप्रैल",
+          "मिट्टी: अच्छी जलनिकासी वाली दोमट (pH 6.0-7.5)",
+          "पानी की आवश्यकता: 4-6 सिंचाई (500-700 मिमी)",
+          "उर्वरक (प्रति एकड़): N: 50-60 किग्रा, P: 25-30 किग्रा, K: 20-25 किग्रा",
+          "बाजार मूल्य: ₹2,100-₹2,600 प्रति क्विंटल"
+        ]
       },
       { 
         src: 'Maize.jpeg', 
-        name: "Maize", 
+        name: "मक्का", 
         description: [
-          "Sowing Months: Kharif: June-July, Rabi: October-November (in South India)",
-          "Harvesting: 90-100 days after sowing",
-          "Soil Type: Well-drained sandy loam (pH 5.5-7.0)",
-          "Water Requirements: 500-800 mm total",
-          "Fertilizers (per acre): N: 60-80 kg, P: 30-40 kg, K: 20-30 kg",
-          "Market Price: ₹1,700-₹2,200 per quintal"
+          "बुवाई का समय: खरीफ: जून-जुलाई, रबी: अक्टूबर-नवंबर (दक्षिण भारत में)",
+          "कटाई: बुवाई के 90-100 दिन बाद",
+          "मिट्टी: अच्छी जलनिकासी वाली रेतीली दोमट (pH 5.5-7.0)",
+          "पानी की आवश्यकता: 500-800 मिमी",
+          "उर्वरक (प्रति एकड़): N: 60-80 किग्रा, P: 30-40 किग्रा, K: 20-30 किग्रा",
+          "बाजार मूल्य: ₹1,700-₹2,200 प्रति क्विंटल"
         ] 
       },
       { 
         src: 'sugarcane.jpeg', 
-        name: "Sugarcane", 
+        name: "गन्ना", 
         description: [
-          "Planting Months: February-March or October-November",
-          "Harvesting: 12-18 months after planting",
-          "Soil Type: Deep fertile loams (pH 6.5-7.5)",
-          "Water Requirements: 2000-2500 mm annually",
-          "Fertilizers (per acre): N: 150-200 kg, P: 60-80 kg, K: 80-100 kg",
-          "Market Price: ₹310-₹340 per quintal"
+          "रोपण का समय: फरवरी-मार्च या अक्टूबर-नवंबर",
+          "कटाई: 12-18 महीने बाद",
+          "मिट्टी: गहरी उपजाऊ दोमट (pH 6.5-7.5)",
+          "पानी की आवश्यकता: 2000-2500 मिमी वार्षिक",
+          "उर्वरक (प्रति एकड़): N: 150-200 किग्रा, P: 60-80 किग्रा, K: 80-100 किग्रा",
+          "बाजार मूल्य: ₹310-₹340 प्रति क्विंटल"
         ] 
       },
       { 
         src: 'soyabean.jpeg', 
-        name: "Soyabean", 
+        name: "सोयाबीन", 
         description: [
-          "Sowing Months: June-July (with monsoon onset)",
-          "Harvesting: September-October",
-          "Soil Type: Well-drained black soil (pH 6.0-7.5)",
-          "Water Requirements: 450-700 mm total",
-          "Fertilizers (per acre): N: 20-25 kg, P: 60-80 kg, K: 40-50 kg",
-          "Market Price: ₹3,500-₹4,500 per quintal"
+          "बुवाई का समय: जून-जुलाई (मानसून के साथ)",
+          "कटाई: सितंबर-अक्टूबर",
+          "मिट्टी: अच्छी जलनिकासी वाली काली मिट्टी (pH 6.0-7.5)",
+          "पानी की आवश्यकता: 450-700 मिमी",
+          "उर्वरक (प्रति एकड़): N: 20-25 किग्रा, P: 60-80 किग्रा, K: 40-50 किग्रा",
+          "बाजार मूल्य: ₹3,500-₹4,500 प्रति क्विंटल"
         ] 
       },
       { 
         src: 'joh.jpeg', 
-        name: "Jowar", 
+        name: "ज्वार", 
         description: [
-          "Sowing Months: Kharif: June-July, Rabi: September-October",
-          "Harvesting: 100-120 days after sowing",
-          "Soil Type: Red, black or sandy loam (pH 6.0-8.0)",
-          "Water Requirements: 400-600 mm (Drought resistant)",
-          "Fertilizers (per acre): N: 40-60 kg, P: 20-30 kg, K: 20-25 kg",
-          "Market Price: ₹2,000-₹2,800 per quintal"
+          "बुवाई का समय: खरीफ: जून-जुलाई, रबी: सितंबर-अक्टूबर",
+          "कटाई: बुवाई के 100-120 दिन बाद",
+          "मिट्टी: लाल, काली या रेतीली दोमट (pH 6.0-8.0)",
+          "पानी की आवश्यकता: 400-600 मिमी (सूखा सहिष्णु)",
+          "उर्वरक (प्रति एकड़): N: 40-60 किग्रा, P: 20-30 किग्रा, K: 20-25 किग्रा",
+          "बाजार मूल्य: ₹2,000-₹2,800 प्रति क्विंटल"
         ] 
       },
       { 
         src: 'millet.jpeg', 
-        name: "Millet", 
-        description: [
-          "Sowing Months: July-August",
-          "Harvesting: October-November",
-          "Soil Type: Light sandy soils (pH 6.5-7.5)",
-          "Water Requirements: 350-500 mm (Highly drought resistant)",
-          "Fertilizers (per acre): N: 30-40 kg, P: 20-25 kg, K: 15-20 kg",
-          "Market Price: ₹2,500-₹3,500 per quintal"
-        ] 
+        "name": "बाजरा",
+        "description": [
+          "बुवाई का समय: जुलाई-अगस्त",
+          "कटाई का समय: अक्टूबर-नवंबर",
+          "मिट्टी का प्रकार: हल्की बलुई मिट्टी (pH 6.5-7.5)",
+          "पानी की आवश्यकता: 350-500 मिमी (अत्यधिक सूखा सहनशील)",
+          "उर्वरक (प्रति एकड़): नाइट्रोजन: 30-40 किग्रा, फॉस्फोरस: 20-25 किग्रा, पोटाश: 15-20 किग्रा",
+          "बाजार मूल्य: ₹2,500-₹3,500 प्रति क्विंटल"
+        ]
       },
       {
    src: 'mung.jpeg',
-  name: "Moong (Green Gram)",
-  description: [
-    "Sowing: June-July (Kharif) or March-April (Zaid)",
-    "Harvest: 60-75 days after sowing",
-    "Soil: Well-drained loam (pH 6.5-7.5)",
-    "Water: 2-3 irrigations (350-400mm total)",
-    "Fertilizers (per acre): N:15kg, P:30kg, K:20kg",
-    "Yield: 8-12 quintals/acre",
-    "Price: ₹6,000-₹8,000 per quintal"
-   
-  ]
+   name: "मूंग (हरी मटर)",
+   description: [
+     "बुवाई: जून-जुलाई (खरीफ) या मार्च-अप्रैल (जायद)",
+     "कटाई: बुवाई के 60-75 दिन बाद",
+     "मिट्टी: अच्छी जलनिकासी वाली दोमट (pH 6.5-7.5)",
+     "पानी की आवश्यकता: 2-3 सिंचाई (कुल 350-400 मिमी)",
+     "उर्वरक (प्रति एकड़): N:15 किग्रा, P:30 किग्रा, K:20 किग्रा",
+     "उपज: 8-12 क्विंटल/एकड़",
+     "मूल्य: ₹6,000-₹8,000 प्रति क्विंटल"
+   ]
 },
       { 
         src: 'sarso.jpeg', 
-        name: "Sarso", 
-        description: [
-          "Sowing Months: October-November",
-          "Harvesting: February-March",
-          "Soil Type: Light loam to clay loam (pH 7.0-8.5)",
-          "Water Requirements: 300-400 mm total",
-          "Fertilizers (per acre): N: 40-50 kg, P: 20-25 kg, K: 15-20 kg, Sulfur: 20 kg",
-          "Market Price: ₹5,000-₹6,500 per quintal"
+        "src": "sarso.jpeg",
+        "name": "सरसों",
+        "description": [
+          "बुवाई का समय: अक्टूबर-नवंबर",
+          "कटाई का समय: फरवरी-मार्च",
+          "मिट्टी का प्रकार: हल्की दोमट से चिकनी दोमट मिट्टी (pH 7.0-8.5)",
+          "पानी की आवश्यकता: कुल 300-400 मिमी",
+          "उर्वरक (प्रति एकड़): नाइट्रोजन: 40-50 किग्रा, फॉस्फोरस: 20-25 किग्रा, पोटाश: 15-20 किग्रा, सल्फर: 20 किग्रा",
+          "बाजार मूल्य: ₹5,000-₹6,500 प्रति क्विंटल"
         ] 
       },
       { 
         src: 'coffee-beans.jpeg', 
-        name: "Coffee-Beans", 
-        description: [
-          "Planting Months: June-September (with rains)",
-          "First Harvest: 3-4 years after planting",
-          "Soil Type: Volcanic red soil (pH 4.5-6.0)",
-          "Water Requirements: 1500-2500 mm annually",
-          "Fertilizers (per acre): N: 80-100 kg, P: 40-50 kg, K: 100-120 kg",
-          "Market Price: Arabica: ₹8,000-₹12,000, Robusta: ₹5,000-₹8,000 per quintal"
+        "name": "कॉफी बीन्स",
+  "description": [
+    "रोपण का समय: जून-सितंबर (बारिश के साथ)",
+    "पहली कटाई: रोपण के 3-4 वर्ष बाद",
+    "मिट्टी का प्रकार: ज्वालामुखीय लाल मिट्टी (pH 4.5-6.0)",
+    "पानी की आवश्यकता: वार्षिक 1500-2500 मिमी",
+    "उर्वरक (प्रति एकड़): नाइट्रोजन: 80-100 किग्रा, फॉस्फोरस: 40-50 किग्रा, पोटाश: 100-120 किग्रा",
+    "बाजार मूल्य: अरेबिका: ₹8,000-₹12,000, रोबस्टा: ₹5,000-₹8,000 प्रति क्विंटल"
         ] 
       }
     ]
@@ -136,122 +136,122 @@ const cropCategories = [
     crops: [
       { 
         src: 'apple.jpeg', 
-        name: "Apple", 
-        description: [
-          "Planting Season: January-February (in plains), March-April (hills)",
-          "Harvesting: July-November (varies by variety)",
-          "Soil Type: Well-drained loamy (pH 5.5-6.5)",
-          "Water Requirements: 100-125 cm annually",
-          "Fertilizers (per tree): N: 500-1000g, P: 300-500g, K: 500-800g",
-          "Market Price: ₹80-₹200 per kg"
+        name: "सेब",
+      description: [
+        "रोपण का मौसम: जनवरी-फरवरी (मैदानी क्षेत्रों में), मार्च-अप्रैल (पहाड़ी क्षेत्रों में)",
+        "कटाई: जुलाई-नवंबर (प्रजाति के अनुसार भिन्न)",
+        "मिट्टी का प्रकार: अच्छी जल निकासी वाली दोमट मिट्टी (pH 5.5-6.5)",
+        "पानी की आवश्यकता: प्रति वर्ष 100-125 सेमी",
+        "उर्वरक (प्रति पेड़): नाइट्रोजन: 500-1000 ग्राम, फास्फोरस: 300-500 ग्राम, पोटाश: 500-800 ग्राम",
+        "बाजार मूल्य: ₹80-₹200 प्रति किलोग्राम"
         ] 
       },
       { 
         src: 'banana.jpeg', 
-        name: "Banana", 
+        name: "केला",
         description: [
-          "Planting Season: June-July or February-March",
-          "Harvesting: 12-15 months after planting",
-          "Soil Type: Deep, rich loamy (pH 6.0-7.5)",
-          "Water Requirements: 2000-2500 mm annually",
-          "Fertilizers (per plant): N: 200-250g, P: 60-100g, K: 300-400g",
-          "Market Price: ₹20-₹60 per kg"
+          "रोपण का मौसम: जून-जुलाई या फरवरी-मार्च",
+          "कटाई: रोपण के 12-15 महीने बाद",
+          "मिट्टी का प्रकार: गहरी, समृद्ध दोमट मिट्टी (pH 6.0-7.5)",
+          "पानी की आवश्यकता: प्रति वर्ष 2000-2500 मिमी",
+          "उर्वरक (प्रति पौधा): नाइट्रोजन: 200-250 ग्राम, फास्फोरस: 60-100 ग्राम, पोटाश: 300-400 ग्राम",
+          "बाजार मूल्य: ₹20-₹60 प्रति किलोग्राम"
         ] 
       },
       { 
         src: 'grapes.jpeg', 
-        name: "Grapes", 
+        name: "अंगूर",
         description: [
-          "Planting Season: February-March (in North India)",
-          "Harvesting: May-June (summer crop), October-November (winter crop)",
-          "Soil Type: Well-drained sandy loam (pH 6.5-7.5)",
-          "Water Requirements: 800-1200 mm annually",
-          "Fertilizers (per acre): N: 100-120kg, P: 50-60kg, K: 100-120kg",
-          "Market Price: ₹40-₹150 per kg"
+          "रोपण का मौसम: फरवरी-मार्च (उत्तर भारत में)",
+          "कटाई: मई-जून (ग्रीष्मकाल), अक्टूबर-नवंबर (शीतकाल)",
+          "मिट्टी का प्रकार: अच्छी जल निकासी वाली बलुई दोमट मिट्टी (pH 6.5-7.5)",
+          "पानी की आवश्यकता: प्रति वर्ष 800-1200 मिमी",
+          "उर्वरक (प्रति एकड़): नाइट्रोजन: 100-120 किग्रा, फास्फोरस: 50-60 किग्रा, पोटाश: 100-120 किग्रा",
+          "बाजार मूल्य: ₹40-₹150 प्रति किलोग्राम"
         ] 
       },
       { 
         src: 'strawberry.jpeg', 
-        name: "Strawberry", 
+        name: "स्ट्रॉबेरी",
         description: [
-          "Planting Season: September-October (in North India)",
-          "Harvesting: January-March",
-          "Soil Type: Sandy loam (pH 5.5-6.5)",
-          "Water Requirements: 500-700 mm (drip irrigation preferred)",
-          "Fertilizers (per acre): N: 50kg, P: 25kg, K: 25kg",
-          "Market Price: ₹200-₹500 per kg"
+          "रोपण का मौसम: सितंबर-अक्टूबर (उत्तर भारत में)",
+          "कटाई: जनवरी-मार्च",
+          "मिट्टी का प्रकार: बलुई दोमट (pH 5.5-6.5)",
+          "पानी की आवश्यकता: 500-700 मिमी (ड्रिप सिंचाई उपयुक्त)",
+          "उर्वरक (प्रति एकड़): नाइट्रोजन: 50 किग्रा, फास्फोरस: 25 किग्रा, पोटाश: 25 किग्रा",
+          "बाजार मूल्य: ₹200-₹500 प्रति किलोग्राम"
         ] 
       },
       { 
         src: 'orange.jpeg', 
-        name: "Orange", 
+        name: "संतरा",
         description: [
-          "Planting Season: June-August (with monsoon)",
-          "Harvesting: December-February",
-          "Soil Type: Deep, well-drained loam (pH 6.0-7.5)",
-          "Water Requirements: 1000-1200 mm annually",
-          "Fertilizers (per tree): N: 500-600g, P: 200-300g, K: 300-500g",
-          "Market Price: ₹30-₹80 per kg"
+          "रोपण का मौसम: जून-अगस्त (मानसून के साथ)",
+          "कटाई: दिसंबर-फरवरी",
+          "मिट्टी का प्रकार: गहरी, अच्छी जल निकासी वाली दोमट (pH 6.0-7.5)",
+          "पानी की आवश्यकता: प्रति वर्ष 1000-1200 मिमी",
+          "उर्वरक (प्रति पेड़): नाइट्रोजन: 500-600 ग्राम, फास्फोरस: 200-300 ग्राम, पोटाश: 300-500 ग्राम",
+          "बाजार मूल्य: ₹30-₹80 प्रति किलोग्राम"
         ] 
       },
       { 
         src: 'dates.jpeg', 
-        name: "Dates", 
-        description: [
-          "Planting Season: June-July",
-          "First Harvest: 4-5 years after planting",
-          "Soil Type: Sandy loam (pH 8.0-10.0)",
-          "Water Requirements: 1500-2000 mm (drought tolerant after establishment)",
-          "Fertilizers (per tree): N: 500g, P: 200g, K: 500g",
-          "Market Price: ₹100-₹300 per kg"
+        name: "खजूर",
+      description: [
+        "रोपण का मौसम: जून-जुलाई",
+        "पहली कटाई: रोपण के 4-5 साल बाद",
+        "मिट्टी का प्रकार: बलुई दोमट (pH 8.0-10.0)",
+        "पानी की आवश्यकता: 1500-2000 मिमी (स्थिरता के बाद सूखा सहनशील)",
+        "उर्वरक (प्रति पेड़): नाइट्रोजन: 500 ग्राम, फास्फोरस: 200 ग्राम, पोटाश: 500 ग्राम",
+        "बाजार मूल्य: ₹100-₹300 प्रति किलोग्राम"
         ] 
       },
       { 
         src: 'pineapple.jpeg', 
-        name: "Pineapple", 
-        description: [
-          "Planting Season: Throughout year (best in July-August)",
-          "Harvesting: 15-18 months after planting",
-          "Soil Type: Acidic sandy loam (pH 4.5-6.0)",
-          "Water Requirements: 1000-1500 mm annually",
-          "Fertilizers (per acre): N: 16kg, P: 4kg, K: 16kg",
-          "Market Price: ₹20-₹60 per kg"
+        name: "अनानास", 
+       description: [
+        "रोपण का मौसम: पूरे साल (जुलाई-अगस्त में सबसे अच्छा)",
+        "कटाई: रोपण के 15-18 महीने बाद",
+        "मिट्टी का प्रकार: अम्लीय रेतीली दोमट (पीएच 4.5-6.0)",
+        "पानी की आवश्यकता: 1000-1500 मिमी प्रति वर्ष",
+        "उर्वरक (प्रति एकड़): एन: 16 किग्रा, पी: 4 किग्रा, के: 16 किग्रा",
+        "बाजार मूल्य: ₹20-₹60 प्रति किग्रा"
         ] 
       },
       { 
         src: 'mango.jpeg', 
-        name: "Mango", 
-        description: [
-          "Planting Season: July-August (monsoon season)",
-          "First Harvest: 4-5 years after planting",
-          "Soil Type: Deep, well-drained loam (pH 5.5-7.5)",
-          "Water Requirements: 900-1200 mm annually",
-          "Fertilizers (per tree): N: 1kg, P: 500g, K: 1kg",
-          "Market Price: ₹30-₹150 per kg (varies by variety)"
+        name: "आम", 
+       description: [
+        "रोपण का मौसम: जुलाई-अगस्त (मानसून का मौसम)",
+        "पहली फसल: रोपण के 4-5 साल बाद",
+        "मिट्टी का प्रकार: गहरी, अच्छी जल निकासी वाली दोमट (पीएच 5.5-7.5)",
+        "पानी की आवश्यकता: 900-1200 मिमी प्रति वर्ष",
+        "उर्वरक (प्रति पेड़): एन: 1 किग्रा, पी: 500 ग्राम, के: 1 किग्रा",
+        "बाजार मूल्य: ₹30-₹150 प्रति किग्रा (किस्म के अनुसार अलग-अलग)"
         ] 
       },
       { 
         src: 'chiku.jpeg', 
-        name: "Chiku", 
-        description: [
-          "Planting Season: June-September",
-          "First Harvest: 3-4 years after planting",
-          "Soil Type: Deep, well-drained sandy loam (pH 6.0-8.0)",
-          "Water Requirements: 1000-1500 mm annually",
-          "Fertilizers (per tree): N: 500g, P: 250g, K: 500g",
-          "Market Price: ₹40-₹100 per kg"
+        name: "चीकू", 
+       description: [
+        "रोपण का मौसम: जून-सितंबर",
+        "पहली फसल: रोपण के 3-4 साल बाद",
+        "मिट्टी का प्रकार: गहरी, अच्छी तरह से सूखा रेतीली दोमट (पीएच 6.0-8.0)",
+        "पानी की आवश्यकता: 1000-1500 मिमी प्रति वर्ष",
+        "उर्वरक (प्रति पेड़): एन: 500 ग्राम, पी: 250 ग्राम, के: 500 ग्राम",
+        "बाजार मूल्य: ₹40-₹100 प्रति किलोग्राम"
         ] 
       },
       { 
         src: 'kiwi.jpeg', 
-        name: "Kiwi", 
-        description: [
-          "Planting Season: December-January",
-          "First Harvest: 4-5 years after planting",
-          "Soil Type: Deep, well-drained loam (pH 5.0-6.5)",
-          "Water Requirements: 1500-2000 mm annually",
-          "Fertilizers (per vine): N: 500g, P: 300g, K: 800g",
-          "Market Price: ₹150-₹400 per kg"
+        name: "कीवी", 
+       description: [
+        "रोपण का मौसम: दिसंबर-जनवरी",
+        "पहली फसल: रोपण के 4-5 साल बाद",
+        "मिट्टी का प्रकार: गहरी, अच्छी तरह से सूखा दोमट (पीएच 5.0-6.5)",
+        "पानी की आवश्यकता: 1500-2000 मिमी सालाना",
+        "उर्वरक (प्रति बेल): एन: 500 ग्राम, पी: 300 ग्राम, के: 800 ग्राम",
+        "बाजार मूल्य: ₹150-₹400 प्रति किलोग्राम"
         ] 
       }
     ]
@@ -261,122 +261,122 @@ const cropCategories = [
     crops: [
       { 
         src: 'Carrots.jpeg', 
-        name: "Carrots", 
-        description: [
-          "Sowing Season: August-November",
-          "Harvesting: 90-100 days after sowing",
-          "Soil Type: Sandy loam (pH 6.0-7.0)",
-          "Water Requirements: 400-500 mm (regular light irrigation)",
-          "Fertilizers (per acre): N: 50kg, P: 25kg, K: 50kg",
-          "Market Price: ₹20-₹60 per kg"
+        name: "गाजर", 
+       description: [
+        "बुवाई का मौसम: अगस्त-नवंबर",
+        "कटाई: बुवाई के 90-100 दिन बाद",
+        "मिट्टी का प्रकार: रेतीली दोमट (पीएच 6.0-7.0)",
+        "पानी की आवश्यकता: 400-500 मिमी (नियमित हल्की सिंचाई)",
+        "उर्वरक (प्रति एकड़): नाइट्रोजन: 50 किग्रा, फास्फोरस: 25 किग्रा, पोटेशियम: 50 किग्रा",
+        "बाजार मूल्य: ₹20-₹60 प्रति किग्रा"
         ] 
       },
       { 
         src: 'Broccoli.jpeg', 
-        name: "Broccoli", 
-        description: [
-          "Sowing Season: September-November",
-          "Harvesting: 90-100 days after transplanting",
-          "Soil Type: Well-drained loam (pH 6.0-7.0)",
-          "Water Requirements: 350-400 mm (drip irrigation preferred)",
-          "Fertilizers (per acre): N: 80kg, P: 40kg, K: 40kg",
-          "Market Price: ₹40-₹100 per kg"
+        name: "ब्रोकोली", 
+       description: [
+        "बुवाई का मौसम: सितंबर-नवंबर",
+        "कटाई: रोपाई के 90-100 दिन बाद",
+        "मिट्टी का प्रकार: अच्छी जल निकासी वाली दोमट (pH 6.0-7.0)",
+        "पानी की आवश्यकता: 350-400 मिमी (ड्रिप सिंचाई बेहतर)",
+        "उर्वरक (प्रति एकड़): N: 80 किग्रा, P: 40 किग्रा, K: 40 किग्रा",
+        "बाजार मूल्य: ₹40-₹100 प्रति किग्रा"
         ] 
       },
       { 
         src: 'Spinach.jpeg', 
-        name: "Spinach", 
-        description: [
-          "Sowing Season: September-November (winter crop)",
-          "Harvesting: 30-45 days after sowing",
-          "Soil Type: Rich, well-drained loam (pH 6.5-7.5)",
-          "Water Requirements: 300-400 mm (frequent light irrigation)",
-          "Fertilizers (per acre): N: 25kg, P: 10kg, K: 10kg",
-          "Market Price: ₹20-₹50 per kg"
+        name: "पालक", 
+       description: [
+        "बुवाई का मौसम: सितंबर-नवंबर (सर्दियों की फसल)",
+        "कटाई: बुवाई के 30-45 दिन बाद",
+        "मिट्टी का प्रकार: उपजाऊ, अच्छी जल निकासी वाली दोमट (pH 6.5-7.5)",
+        "पानी की आवश्यकता: 300-400 मिमी (बार-बार हल्की सिंचाई)",
+        "उर्वरक (प्रति एकड़): नाइट्रोजन: 25 किग्रा, फास्फोरस: 10 किग्रा, पोटेशियम: 10 किग्रा",
+        "बाजार मूल्य: ₹20-₹50 प्रति किग्रा"
         ] 
       },
       { 
         src: 'kale.jpeg', 
-        name: "Kale", 
-        description: [
-          "Sowing Season: September-October",
-          "Harvesting: 50-60 days after sowing",
-          "Soil Type: Well-drained loam (pH 6.0-7.5)",
-          "Water Requirements: 350-450 mm",
-          "Fertilizers (per acre): N: 60kg, P: 30kg, K: 30kg",
-          "Market Price: ₹50-₹120 per kg"
+        name: "केल", 
+       description: [
+        "बुवाई का मौसम: सितंबर-अक्टूबर",
+        "कटाई: बुवाई के 50-60 दिन बाद",
+        "मिट्टी का प्रकार: अच्छी जल निकासी वाली दोमट (पीएच 6.0-7.5)",
+        "पानी की आवश्यकता: 350-450 मिमी",
+        "उर्वरक (प्रति एकड़): नाइट्रोजन: 60 किग्रा, फास्फोरस: 30 किग्रा, पोटेशियम: 30 किग्रा",
+        "बाजार मूल्य: ₹50-₹120 प्रति किग्रा"
         ] 
       },
       { 
         src: 'Peas.jpeg', 
-        name: "Peas", 
-        description: [
-          "Sowing Season: October-November",
-          "Harvesting: 90-100 days after sowing",
-          "Soil Type: Well-drained loam (pH 6.0-7.5)",
-          "Water Requirements: 400-500 mm",
-          "Fertilizers (per acre): N: 20kg, P: 50kg, K: 20kg",
-          "Market Price: ₹30-₹80 per kg"
+        name: "मटर", 
+       description: [
+        "बुवाई का मौसम: अक्टूबर-नवंबर",
+        "कटाई: बुवाई के 90-100 दिन बाद",
+        "मिट्टी का प्रकार: अच्छी जल निकासी वाली दोमट (पीएच 6.0-7.5)",
+        "पानी की आवश्यकता: 400-500 मिमी",
+        "उर्वरक (प्रति एकड़): नाइट्रोजन: 20 किग्रा, फास्फोरस: 50 किग्रा, पोटेशियम: 20 किग्रा",
+        "बाजार मूल्य: ₹30-₹80 प्रति किग्रा"
         ] 
       },
       { 
         src: 'brussels-sprouts.jpeg', 
-        name: "Brussels Sprouts", 
-        description: [
-          "Sowing Season: August-September",
-          "Harvesting: 90-120 days after transplanting",
-          "Soil Type: Rich, well-drained loam (pH 6.0-7.5)",
-          "Water Requirements: 450-500 mm",
-          "Fertilizers (per acre): N: 80kg, P: 40kg, K: 60kg",
-          "Market Price: ₹80-₹150 per kg"
+        name: "ब्रसेल्स स्प्राउट्स", 
+       description: [
+        "बुवाई का मौसम: अगस्त-सितंबर",
+        "कटाई: रोपाई के 90-120 दिन बाद",
+        "मिट्टी का प्रकार: उपजाऊ, अच्छी जल निकासी वाली दोमट (pH 6.0-7.5)",
+        "पानी की आवश्यकता: 450-500 मिमी",
+        "उर्वरक (प्रति एकड़): नाइट्रोजन: 80 किग्रा, फास्फोरस: 40 किग्रा, पोटेशियम: 60 किग्रा",
+        "बाजार मूल्य: ₹80-₹150 प्रति किग्रा"
         ] 
       },
       { 
         src: 'onion.jpeg', 
-        name: "Onion", 
-        description: [
-          "Sowing Season: October-November (rabi)",
-          "Harvesting: 120-150 days after sowing",
-          "Soil Type: Sandy loam (pH 6.0-7.0)",
-          "Water Requirements: 450-500 mm",
-          "Fertilizers (per acre): N: 60kg, P: 30kg, K: 30kg",
-          "Market Price: ₹15-₹40 per kg"
+        name: "प्याज", 
+       description: [
+        "बुवाई का मौसम: अक्टूबर-नवंबर (रबी)",
+        "कटाई: बुवाई के 120-150 दिन बाद",
+        "मिट्टी का प्रकार: रेतीली दोमट (पीएच 6.0-7.0)",
+        "पानी की आवश्यकता: 450-500 मिमी",
+        "उर्वरक (प्रति एकड़): नाइट्रोजन: 60 किग्रा, फास्फोरस: 30 किग्रा, पोटेशियम: 30 किग्रा",
+        "बाजार मूल्य: ₹15-₹40 प्रति किग्रा"
         ] 
       },
       { 
         src: 'Cucumber.jpeg', 
-        name: "Cucumber", 
-        description: [
-          "Sowing Season: February-March (summer), June-July (rainy)",
-          "Harvesting: 50-70 days after sowing",
-          "Soil Type: Well-drained loam (pH 6.0-7.0)",
-          "Water Requirements: 500-600 mm",
-          "Fertilizers (per acre): N: 40kg, P: 20kg, K: 20kg",
-          "Market Price: ₹15-₹40 per kg"
+        name: "खीरा", 
+       description: [
+        "बुवाई का मौसम: फरवरी-मार्च (गर्मी), जून-जुलाई (बरसात)",
+        "कटाई: बुवाई के 50-70 दिन बाद",
+        "मिट्टी का प्रकार: अच्छी जल निकासी वाली दोमट (पीएच 6.0-7.0)",
+        "पानी की आवश्यकता: 500-600 मिमी",
+        "उर्वरक (प्रति एकड़): नाइट्रोजन: 40 किग्रा, फास्फोरस: 20 किग्रा, पोटेशियम: 20 किग्रा",
+        "बाजार मूल्य: ₹15-₹40 प्रति किग्रा"
         ] 
       },
       { 
         src: 'potato.jpeg', 
-        name: "Potato", 
+        name: "आलू", 
         description: [
-          "Sowing Season: October-November (rabi)",
-          "Harvesting: 90-110 days after sowing",
-          "Soil Type: Well-drained sandy loam (pH 5.0-6.5)",
-          "Water Requirements: 500-700 mm",
-          "Fertilizers (per acre): N: 120kg, P: 60kg, K: 100kg",
-          "Market Price: ₹10-₹30 per kg"
+"बुवाई का मौसम: अक्टूबर-नवंबर (रबी)",
+"कटाई: बुवाई के 90-110 दिन बाद",
+"मिट्टी का प्रकार: अच्छी जल निकासी वाली रेतीली दोमट (पीएच 5.0-6.5)",
+"पानी की आवश्यकता: 500-700 मिमी",
+"उर्वरक (प्रति एकड़): नाइट्रोजन: 120 किग्रा, फास्फोरस: 60 किग्रा, पोटेशियम: 100 किग्रा",
+"बाजार मूल्य: ₹10-₹30 प्रति किग्रा"
         ] 
       },
       { 
         src: 'tomato.jpeg', 
-        name: "Tomato", 
-        description: [
-          "Sowing Season: June-July (kharif), October-November (rabi)",
-          "Harvesting: 90-100 days after transplanting",
-          "Soil Type: Well-drained loam (pH 6.0-7.0)",
-          "Water Requirements: 600-800 mm",
-          "Fertilizers (per acre): N: 80kg, P: 40kg, K: 40kg",
-          "Market Price: ₹15-₹50 per kg"
+        name: "टमाटर", 
+       description: [
+        "बुवाई का मौसम: जून-जुलाई (खरीफ), अक्टूबर-नवंबर (रबी)",
+        "कटाई: रोपाई के 90-100 दिन बाद",
+        "मिट्टी का प्रकार: अच्छी जल निकासी वाली दोमट (पीएच 6.0-7.0)",
+        "पानी की आवश्यकता: 600-800 मिमी",
+        "उर्वरक (प्रति एकड़): नाइट्रोजन: 80 किग्रा, फास्फोरस: 40 किग्रा, पोटेशियम: 40 किग्रा",
+        "बाजार मूल्य: ₹15-₹50 प्रति किग्रा"
         ] 
       }
     ]
@@ -386,123 +386,122 @@ const cropCategories = [
     crops: [
       { 
         src: 'roses.jpeg', 
-        name: "Rose", 
+        name: "गुलाब", 
         description: [
-          "Planting Season: October-November",
-          "Flowering: Year-round in suitable climates",
-          "Soil Type: Well-drained loam (pH 6.0-7.0)",
-          "Water Requirements: 500-600 mm (drip irrigation preferred)",
-          "Fertilizers (per acre): N: 150kg, P: 100kg, K: 150kg",
-          "Market Price: ₹1-₹5 per flower (varies by variety)"
+"रोपण का मौसम: अक्टूबर-नवंबर",
+"फूल खिलना: उपयुक्त जलवायु में साल भर",
+"मिट्टी का प्रकार: अच्छी जल निकासी वाली दोमट (pH 6.0-7.0)",
+"पानी की आवश्यकता: 500-600 मिमी (ड्रिप सिंचाई बेहतर)",
+"उर्वरक (प्रति एकड़): N: 150 किग्रा, P: 100 किग्रा, K: 150 किग्रा",
+"बाजार मूल्य: ₹1-₹5 प्रति फूल (किस्म के अनुसार अलग-अलग)"
         ] 
       },
       { 
         src: 'Sunflowers .jpeg', 
-        name: "Sunflower", 
+        name: "सूरजमुखी", 
         description: [
-          "Sowing Season: June-July (kharif), February-March (spring)",
-          "Flowering: 70-80 days after sowing",
-          "Soil Type: Well-drained loam (pH 6.0-8.0)",
-          "Water Requirements: 500-600 mm",
-          "Fertilizers (per acre): N: 60kg, P: 30kg, K: 30kg",
-          "Market Price: ₹10-₹30 per flower"
+"बुवाई का मौसम: जून-जुलाई (खरीफ), फरवरी-मार्च (वसंत)",
+"फूल आना: बुवाई के 70-80 दिन बाद",
+"मिट्टी का प्रकार: अच्छी जल निकासी वाली दोमट (पीएच 6.0-8.0)",
+"पानी की आवश्यकता: 500-600 मिमी",
+"उर्वरक (प्रति एकड़): नाइट्रोजन: 60 किग्रा, फास्फोरस: 30 किग्रा, पोटेशियम: 30 किग्रा",
+"बाजार मूल्य: ₹10-₹30 प्रति फूल"
         ] 
       },
       { 
         src: 'tulips.jpeg', 
-        name: "Tulips", 
-        description: [
-          "Planting Season: October-November (bulbs)",
-          "Flowering: February-March",
-          "Soil Type: Sandy loam (pH 6.0-7.0)",
-          "Water Requirements: 300-400 mm",
-          "Fertilizers (per acre): N: 50kg, P: 30kg, K: 40kg",
-          "Market Price: ₹20-₹50 per flower"
+        name: "ट्यूलिप", 
+       description: [
+        "रोपण का मौसम: अक्टूबर-नवंबर (बल्ब)",
+        "फूल आना: फरवरी-मार्च",
+        "मिट्टी का प्रकार: रेतीली दोमट (पीएच 6.0-7.0)",
+        "पानी की आवश्यकता: 300-400 मिमी",
+        "उर्वरक (प्रति एकड़): नाइट्रोजन: 50 किग्रा, फास्फोरस: 30 किग्रा, पोटेशियम: 40 किग्रा",
+        "बाजार मूल्य: ₹20-₹50 प्रति फूल"
         ] 
       },
       { 
         src: 'Marigolds .jpeg', 
-        name: "Marigold", 
-        description: [
-          "Sowing Season: June-July (rainy season), September-October (winter)",
-          "Flowering: 60-70 days after sowing",
-          "Soil Type: Well-drained loam (pH 6.0-7.5)",
-          "Water Requirements: 400-500 mm",
-          "Fertilizers (per acre): N: 40kg, P: 20kg, K: 20kg",
-          "Market Price: ₹50-₹150 per kg (flowers)"
+        name: "मैरीगोल्ड", 
+       description: [
+        "बुवाई का मौसम: जून-जुलाई (बरसात का मौसम), सितंबर-अक्टूबर (सर्दियाँ)",
+        "फूल आना: बुवाई के 60-70 दिन बाद",
+        "मिट्टी का प्रकार: अच्छी जल निकासी वाली दोमट (pH 6.0-7.5)",
+        "पानी की आवश्यकता: 400-500 मिमी",
+        "उर्वरक (प्रति एकड़): नाइट्रोजन: 40 किग्रा, फास्फोरस: 20 किग्रा, पोटेशियम: 20 किग्रा",
+        "बाजार मूल्य: ₹50-₹150 प्रति किग्रा (फूल)"
         ] 
       },
       { 
         src: 'lotus.jpeg', 
-        name: "Lotus", 
-        description: [
-          "Planting Season: June-July",
-          "Flowering: August-October",
-          "Soil Type: Clayey soil under 30-60cm water",
-          "Water Requirements: Standing water required",
-          "Fertilizers (per acre): Organic manure preferred",
-          "Market Price: ₹10-₹30 per flower"
+      
+name: "कमल", 
+description: [
+"रोपण का मौसम: जून-जुलाई",
+"फूल आना: अगस्त-अक्टूबर",
+"मिट्टी का प्रकार: चिकनी मिट्टी 30-60 सेमी पानी के नीचे",
+"पानी की आवश्यकता: स्थिर पानी की आवश्यकता",
+"उर्वरक (प्रति एकड़): जैविक खाद को प्राथमिकता दी जाती है",
+"बाजार मूल्य: ₹10-₹30 प्रति फूल"
         ] 
       },
       { 
         src: 'daisy.jpeg', 
-        name: "Daisy", 
+        name: "डेज़ी", 
         description: [
-          "Sowing Season: September-October",
-          "Flowering: 90-100 days after sowing",
-          "Soil Type: Well-drained loam (pH 6.0-7.5)",
-          "Water Requirements: 400-500 mm",
-          "Fertilizers (per acre): N: 40kg, P: 20kg, K: 20kg",
-          "Market Price: ₹1-₹5 per flower"
+"बुवाई का मौसम: सितंबर-अक्टूबर",
+"फूल आना: बुवाई के 90-100 दिन बाद",
+"मिट्टी का प्रकार: अच्छी जल निकासी वाली दोमट (pH 6.0-7.5)",
+"पानी की आवश्यकता: 400-500 मिमी",
+"उर्वरक (प्रति एकड़): N: 40 किग्रा, P: 20 किग्रा, K: 20 किग्रा",
+"बाजार मूल्य: ₹1-₹5 प्रति फूल"
         ] 
       },
       { 
         src: 'Lilies.jpeg', 
-        name: "Lilies", 
-        description: [
-          "Planting Season: October-November (bulbs)",
-          "Flowering: March-April",
-          "Soil Type: Well-drained loam (pH 6.0-6.5)",
-          "Water Requirements: 400-500 mm",
-          "Fertilizers (per acre): N: 60kg, P: 40kg, K: 40kg",
-          "Market Price: ₹20-₹50 per flower"
+        name: "लिली", 
+       description: [
+        "रोपण का मौसम: अक्टूबर-नवंबर (बल्ब)",
+        "फूल आना: मार्च-अप्रैल",
+        "मिट्टी का प्रकार: अच्छी जल निकासी वाली दोमट (पीएच 6.0-6.5)",
+        "पानी की आवश्यकता: 400-500 मिमी",
+        "उर्वरक (प्रति एकड़): एन: 60 किग्रा, पी: 40 किग्रा, के: 40 किग्रा",
+        "बाजार मूल्य: ₹20-₹50 प्रति फूल"
         ] 
       },
       { 
         src: 'Orchids .jpeg', 
-        name: "Orchids", 
+        name: "ऑर्किड", 
         description: [
-          "Planting Season: Year-round in controlled environments",
-          "Flowering: Varies by species (typically 6-12 months after planting)",
-          "Growing Medium: Special orchid mix (bark, moss, etc.)",
-          "Water Requirements: High humidity, moderate watering",
-          "Fertilizers: Special orchid fertilizer (weekly weakly)",
-          "Market Price: ₹200-₹2000 per plant (varies by variety)"
-        ] 
+"रोपण का मौसम: नियंत्रित वातावरण में साल भर",
+"फूल आना: प्रजाति के अनुसार अलग-अलग होता है (आमतौर पर रोपण के 6-12 महीने बाद)",
+"बढ़ने का माध्यम: विशेष आर्किड मिश्रण (छाल, काई, आदि)",
+"पानी की आवश्यकता: उच्च आर्द्रता, मध्यम पानी देना",
+"उर्वरक: विशेष आर्किड उर्वरक (साप्ताहिक रूप से कमज़ोर)",
+"बाजार मूल्य: ₹200-₹2000 प्रति पौधा (किस्म के अनुसार अलग-अलग)"
+]
       },
       { 
         src: 'lavender.jpeg', 
-        name: "Lavender", 
-        description: [
-          "Planting Season: October-November",
-          "Flowering: April-June",
-          "Soil Type: Well-drained sandy soil (pH 6.5-7.5)",
-          "Water Requirements: 300-400 mm (drought tolerant)",
-          "Fertilizers (per acre): N: 20kg, P: 15kg, K: 15kg",
-          "Market Price: ₹500-₹1500 per kg (dried flowers)"
-        ] 
+        name: "लैवेंडर", 
+       description: [
+        "रोपण का मौसम: अक्टूबर-नवंबर",
+        "फूल खिलना: अप्रैल-जून",
+        "मिट्टी का प्रकार: अच्छी जल निकासी वाली रेतीली मिट्टी (पीएच 6.5-7.5)",
+        "पानी की आवश्यकता: 300-400 मिमी (सूखा सहनीय)",
+        "उर्वरक (प्रति एकड़): नाइट्रोजन: 20 किग्रा, फास्फोरस: 15 किग्रा, पोटेशियम: 15 किग्रा",
+        "बाजार मूल्य: ₹500-₹1500 प्रति किग्रा (सूखे फूल)" ]
       },
       { 
         src: 'jasmines.jpeg', 
-        name: "Jasmines", 
-        description: [
-          "Planting Season: June-September",
-          "Flowering: Year-round in tropical climates",
-          "Soil Type: Well-drained loam (pH 6.5-7.5)",
-          "Water Requirements: 500-600 mm",
-          "Fertilizers (per acre): N: 100kg, P: 50kg, K: 50kg",
-          "Market Price: ₹100-₹300 per kg (flowers)"
-        ] 
+        name: "चमेली", 
+       description: [
+        "रोपण का मौसम: जून-सितंबर",
+        "फूल खिलना: उष्णकटिबंधीय जलवायु में साल भर",
+        "मिट्टी का प्रकार: अच्छी जल निकासी वाली दोमट (पीएच 6.5-7.5)",
+        "पानी की आवश्यकता: 500-600 मिमी",
+        "उर्वरक (प्रति एकड़): नाइट्रोजन: 100 किग्रा, फास्फोरस: 50 किग्रा, पोटेशियम: 50 किग्रा",
+        "बाजार मूल्य: ₹100-₹300 प्रति किग्रा (फूल)" ]
       }
     ]
   }

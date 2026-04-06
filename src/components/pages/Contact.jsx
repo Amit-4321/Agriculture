@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import './Contact.css';
 import Footer from "./Footer";
+import { useTranslation } from "react-i18next";
 
 function Contact() {
+  const { t } = useTranslation();
+
   const [formData, setFormData] = useState({ 
     name: '', 
     email: '', 
@@ -16,7 +19,6 @@ function Contact() {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
-    // Clear error when user types
     if (errors[name]) {
       setErrors({ ...errors, [name]: '' });
     }
@@ -24,10 +26,10 @@ function Contact() {
 
   const validateForm = () => {
     const newErrors = {};
-    if (!formData.name.trim()) newErrors.name = 'Name is required';
-    if (!formData.email.match(/^\S+@\S+\.\S+$/)) newErrors.email = 'Valid email required';
-    if (!formData.subject.trim()) newErrors.subject = 'Subject is required';
-    if (!formData.message.trim()) newErrors.message = 'Message is required';
+    if (!formData.name.trim()) newErrors.name = t('contact.errors.name');
+    if (!formData.email.match(/^\S+@\S+\.\S+$/)) newErrors.email = t('contact.errors.email');
+    if (!formData.subject.trim()) newErrors.subject = t('contact.errors.subject');
+    if (!formData.message.trim()) newErrors.message = t('contact.errors.message');
     
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -38,14 +40,13 @@ function Contact() {
     if (validateForm()) {
       setIsSubmitting(true);
       try {
-        // Simulate API call
         await new Promise(resolve => setTimeout(resolve, 1000));
         console.log('Form Data:', formData);
         setIsSubmitted(true);
         setFormData({ name: '', email: '', subject: '', message: '' });
         setTimeout(() => setIsSubmitted(false), 3000);
       } catch (error) {
-        alert('Error sending message. Please try again.');
+        alert(t("contact.errors.submit"));
       } finally {
         setIsSubmitting(false);
       }
@@ -55,12 +56,12 @@ function Contact() {
   return (
     <>
     <div className="contact-page">
-      <h1>Contact Us</h1>
-      <p>We would love to hear from you. Please fill out the form below:</p>
+      <h1>{t("contact.title")}</h1>
+      <p>{t("contact.subtitle")}</p>
       
       {isSubmitted ? (
         <div className="success-message">
-          Thank you! Your message has been sent successfully.
+          {t("contact.success")}
         </div>
       ) : (
         <form onSubmit={handleSubmit} className="contact-form">
@@ -68,7 +69,7 @@ function Contact() {
             <input
               type="text"
               name="name"
-              placeholder="Your Name"
+              placeholder={t("contact.form.name")}
               value={formData.name}
               onChange={handleChange}
               className={errors.name ? 'error-input' : ''}
@@ -80,7 +81,7 @@ function Contact() {
             <input
               type="email"
               name="email"
-              placeholder="Your Email"
+              placeholder={t("contact.form.email")}
               value={formData.email}
               onChange={handleChange}
               className={errors.email ? 'error-input' : ''}
@@ -92,7 +93,7 @@ function Contact() {
             <input
               type="text"
               name="subject"
-              placeholder="Subject"
+              placeholder={t("contact.form.subject")}
               value={formData.subject}
               onChange={handleChange}
               className={errors.subject ? 'error-input' : ''}
@@ -103,7 +104,7 @@ function Contact() {
           <div className="form-group">
             <textarea
               name="message"
-              placeholder="Your Message"
+              placeholder={t("contact.form.message")}
               value={formData.message}
               onChange={handleChange}
               className={errors.message ? 'error-input' : ''}
@@ -117,7 +118,7 @@ function Contact() {
             disabled={isSubmitting}
             className="submit-btn"
           >
-            {isSubmitting ? 'Sending...' : 'Send Message'}
+            {isSubmitting ? t("contact.form.sending") : t("contact.form.send")}
           </button>
         </form>
       )}

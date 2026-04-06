@@ -6,125 +6,73 @@
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   z-index: 999;
 }
 
 .modal-box {
-  background: #f4fff1; /* light greenish */
-  width: 90%;
-  max-width: 450px;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
-  animation: popUp 0.3s ease-out;
-}
-
-@keyframes popUp {
-  from {
-    transform: scale(0.8);
-    opacity: 0.2;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
+  background: #fff;
+  width: 500px;
+  max-width: 90%;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.3s ease-in-out;
 }
 
 .modal-header {
-  background-color: #76c043;
-  color: white;
-  padding: 1rem;
-  font-weight: bold;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}
+
+.modal-header h2 {
+  font-size: 1.3rem;
+  margin: 0;
+}
+
+.close-btn {
+  font-size: 1.5rem;
+  color: #555;
+  cursor: pointer;
 }
 
 .modal-content {
-  padding: 1.2rem;
+  margin-top: 15px;
 }
 
 .modal-product-img {
   width: 100%;
-  height: 220px;
+  max-height: 200px;
   object-fit: contain;
-  border-radius: 10px;
-  margin: 1rem 0;
+  margin-bottom: 10px;
 }
 
 .modal-price {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: bold;
-  margin-bottom: 1rem;
-  color: #333;
+  color: #1d7c49;
+  margin-bottom: 10px;
 }
 
-.next-btn, .confirm-btn {
-  background-color: #76c043;
-  color: white;
-  border: none;
-  padding: 0.7rem 1.5rem;
-  border-radius: 8px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s;
-  margin-top: 1rem;
-}
-
-.next-btn:hover, .confirm-btn:hover {
-  background-color: #5aa132;
-}
-
-.close-btn {
-  cursor: pointer;
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: white;
-}
-
-.close-btn-alt {
-  background: #388e3c;
-  color: white;
-  padding: 0.6rem 1.2rem;
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
-}
-
-.modal-footer {
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
-  margin-top: 1.2rem;
-  flex-wrap: wrap;
-}
-
-.payment-options {
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 1rem;
-  flex-wrap: wrap;
-}
-
-.payment-options label {
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.payment-form {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.payment-form input {
+.payment-form input,
+.modal-content input {
   width: 100%;
-  padding: 0.5rem;
-  font-size: 1rem;
-  border-radius: 8px;
+  padding: 10px;
+  margin: 6px 0;
   border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: 0.2s ease-in-out;
+}
+
+.payment-form input:focus,
+.modal-content input:focus {
+  border-color: #007bff;
+  outline: none;
 }
 
 .card-details {
@@ -132,44 +80,64 @@
   gap: 10px;
 }
 
-.cod-note {
-  font-style: italic;
-  color: green;
-  margin: 1rem 0;
+.card-details input {
+  flex: 1;
 }
 
-@media (max-width: 480px) {
-  .modal-box {
-    width: 95%;
-  }
-
-  .modal-header h2 {
-    font-size: 1.1rem;
-  }
-
-  .payment-form input {
-    font-size: 0.9rem;
-  }
-}
-.modal-content p {
-  font-size: 16px;
+.payment-options label {
+  display: block;
   margin-bottom: 10px;
-  text-align: center;
+  font-weight: 500;
+  color: #444;
 }
 
-.modal-header h2 {
-  text-align: center;
+.cod-note,
+.info-note {
+  font-size: 0.9rem;
+  color: #555;
+  margin-top: 8px;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.confirm-btn,
+.close-btn-alt {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
 }
 
 .confirm-btn {
   background-color: #28a745;
   color: white;
-  border: none;
-  padding: 10px 16px;
-  border-radius: 4px;
-  cursor: pointer;
 }
 
 .confirm-btn:hover {
-  opacity: 0.9;
+  background-color: #218838;
+}
+
+.close-btn-alt {
+  background-color: #dc3545;
+  color: white;
+}
+
+.close-btn-alt:hover {
+  background-color: #c82333;
+}
+
+.error {
+  color: red;
+  font-size: 0.8rem;
+  margin-left: 4px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
